@@ -23,16 +23,16 @@ static func play(
 		var index_of_max : int = begest_heap(heaps)
 		var sizeof_max : int = heaps[index_of_max]
 		
-        #if sizeof_max == 1 and is_odd:
-        #	return "You will lose :("
-        #	pass
+#		if sizeof_max == 1 and is_odd:
+#			return "You will lose :("
+#			pass
 		
 		return PoolByteArray([index_of_max, sizeof_max - int(is_odd)])
 	
 	var nim_sum : int = nim_sum(heaps)
 	
-    #if nim_sum == 0:
-    #	return "You will lose :("
+#	if nim_sum == 0:
+#		return "You will lose :("
 	
 	for i in heaps.size():
 		var target_size : int = heaps[i] ^ nim_sum
@@ -90,7 +90,7 @@ static func nim_sum(
 	heaps : PoolByteArray
 	) -> int:
 	
-	var sum : int = 0
+	var sum : int
 	
 	for x in heaps:
 		sum ^= x
