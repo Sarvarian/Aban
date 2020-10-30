@@ -12,17 +12,17 @@ _global_script_classes=[ {
 "base": "Static",
 "class": "Nim",
 "language": "GDScript",
-"path": "res://core/statics/nim.gd"
+"path": "res://aban/statics/nim.gd"
 }, {
 "base": "Object",
 "class": "Static",
 "language": "GDScript",
-"path": "res://core/statics/static.gd"
+"path": "res://aban/statics/static.gd"
 }, {
 "base": "Static",
 "class": "System",
 "language": "GDScript",
-"path": "res://core/statics/system.gd"
+"path": "res://aban/statics/system.gd"
 } ]
 _global_script_class_icons={
 "Nim": "",
