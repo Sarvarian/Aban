@@ -8,9 +8,26 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Static",
+"class": "Nim",
+"language": "GDScript",
+"path": "res://core/statics/nim.gd"
+}, {
+"base": "Object",
+"class": "Static",
+"language": "GDScript",
+"path": "res://core/statics/static.gd"
+}, {
+"base": "Static",
+"class": "System",
+"language": "GDScript",
+"path": "res://core/statics/system.gd"
+} ]
 _global_script_class_icons={
-
+"Nim": "",
+"Static": "",
+"System": ""
 }
 
 [application]
