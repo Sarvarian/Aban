@@ -6,12 +6,13 @@ func go_red() -> void:
 #
 
 func go_green() -> void:
-    $AnimationPlayer.play("Green")
+	$AnimationPlayer.play("Green")
 #
 
 func pressed() -> void:
-    modulate.v = .5
+	modulate.v = .5
 #
 
 func released() -> void:
-    modulate.v = 1
+	modulate.v = 1
+#

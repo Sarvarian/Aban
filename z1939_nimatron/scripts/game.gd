@@ -2,7 +2,7 @@ extends Node2D
 
 
 signal player_turn()
-signal cpu_turn()
+signal cpu_turn(heaps)
 signal line_reset()
 
 
@@ -30,7 +30,7 @@ func submit() -> void:
         emit_signal("player_turn")
         is_player_turn = false
     else:
-        emit_signal("cpu_turn")
+        emit_signal("cpu_turn", get_heaps())
         is_player_turn = true
 
 
