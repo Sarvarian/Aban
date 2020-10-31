@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Aban"
-run/main_scene="res://tests/test.tscn"
+run/main_scene="res://z1939_nimatron/main.tscn"
 
 [display]
 
