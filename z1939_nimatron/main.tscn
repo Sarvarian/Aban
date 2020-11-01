@@ -1058,6 +1058,7 @@ mix_target = 1
 [connection signal="line_reset" from="Game/Line3" to="Game" method="line_reset"]
 [connection signal="go_green" from="Player" to="Player/SubmitButton" method="go_green"]
 [connection signal="go_red" from="Player" to="Player/SubmitButton" method="go_red"]
+[connection signal="reset" from="Player" to="Game" method="reset"]
 [connection signal="submit" from="Player" to="Game" method="submit"]
 [connection signal="turn_off" from="Player" to="Game" method="turn_off"]
 [connection signal="pressed" from="Player/SubmitButton/SubmitButton" to="Player/SubmitButton" method="pressed"]
