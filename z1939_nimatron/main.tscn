@@ -60,30 +60,30 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 46 ) ],
-"loop": false,
-"name": "Red",
-"speed": 0.0
-}, {
 "frames": [ ExtResource( 45 ) ],
 "loop": false,
 "name": "Green",
 "speed": 0.0
+}, {
+"frames": [ ExtResource( 46 ) ],
+"loop": false,
+"name": "Red",
+"speed": 0.0
 } ]
 
-[sub_resource type="CircleShape2D" id=6]
+[sub_resource type="CircleShape2D" id=2]
 radius = 216.0
 
-[sub_resource type="CircleShape2D" id=7]
+[sub_resource type="CircleShape2D" id=3]
 radius = 596.5
 
-[sub_resource type="CircleShape2D" id=8]
+[sub_resource type="CircleShape2D" id=4]
 radius = 945.0
 
-[sub_resource type="CircleShape2D" id=9]
+[sub_resource type="CircleShape2D" id=5]
 radius = 1350.5
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=6]
 length = 1.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Star0:animation")
@@ -122,7 +122,7 @@ tracks/2/keys = {
 "values": [ "Off", "On" ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=7]
 length = 0.9
 loop = true
 tracks/0/type = "value"
@@ -162,42 +162,42 @@ tracks/2/keys = {
 "values": [ "On", "Off" ]
 }
 
-[sub_resource type="SpriteFrames" id=12]
+[sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ ExtResource( 52 ) ],
-"loop": false,
-"name": "On",
-"speed": 0.0
-}, {
 "frames": [ ExtResource( 51 ) ],
 "loop": false,
 "name": "Off",
 "speed": 0.0
-} ]
-
-[sub_resource type="SpriteFrames" id=13]
-animations = [ {
-"frames": [ ExtResource( 54 ) ],
+}, {
+"frames": [ ExtResource( 52 ) ],
 "loop": false,
 "name": "On",
 "speed": 0.0
-}, {
+} ]
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
 "frames": [ ExtResource( 53 ) ],
 "loop": false,
 "name": "Off",
 "speed": 0.0
-} ]
-
-[sub_resource type="SpriteFrames" id=14]
-animations = [ {
-"frames": [ ExtResource( 56 ) ],
+}, {
+"frames": [ ExtResource( 54 ) ],
 "loop": false,
 "name": "On",
 "speed": 0.0
-}, {
+} ]
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
 "frames": [ ExtResource( 55 ) ],
 "loop": false,
 "name": "Off",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 56 ) ],
+"loop": false,
+"name": "On",
 "speed": 0.0
 } ]
 
@@ -1144,7 +1144,7 @@ __meta__ = {
 
 [node name="Line0" type="TouchScreenButton" parent="Player/Button"]
 z_index = 4
-shape = SubResource( 6 )
+shape = SubResource( 2 )
 shape_centered = false
 passby_press = true
 __meta__ = {
@@ -1153,7 +1153,7 @@ __meta__ = {
 
 [node name="Line1" type="TouchScreenButton" parent="Player/Button"]
 z_index = 3
-shape = SubResource( 7 )
+shape = SubResource( 3 )
 shape_centered = false
 passby_press = true
 __meta__ = {
@@ -1162,7 +1162,7 @@ __meta__ = {
 
 [node name="Line2" type="TouchScreenButton" parent="Player/Button"]
 z_index = 2
-shape = SubResource( 8 )
+shape = SubResource( 4 )
 shape_centered = false
 passby_press = true
 __meta__ = {
@@ -1171,7 +1171,7 @@ __meta__ = {
 
 [node name="Line3" type="TouchScreenButton" parent="Player/Button"]
 z_index = 1
-shape = SubResource( 9 )
+shape = SubResource( 5 )
 shape_centered = false
 passby_press = true
 __meta__ = {
@@ -1196,22 +1196,22 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Stars"]
-anims/Reset = SubResource( 10 )
-anims/Thinking = SubResource( 11 )
+anims/Reset = SubResource( 6 )
+anims/Thinking = SubResource( 7 )
 
 [node name="Star0" type="AnimatedSprite" parent="Stars"]
 position = Vector2( -13.5, -324 )
-frames = SubResource( 12 )
+frames = SubResource( 8 )
 animation = "Off"
 
 [node name="Star1" type="AnimatedSprite" parent="Stars"]
 position = Vector2( -13.5, 0 )
-frames = SubResource( 13 )
+frames = SubResource( 9 )
 animation = "Off"
 
 [node name="Star2" type="AnimatedSprite" parent="Stars"]
 position = Vector2( 0, 324 )
-frames = SubResource( 14 )
+frames = SubResource( 10 )
 animation = "Off"
 [connection signal="cpu_turn" from="Game" to="AI" method="cpu_turn"]
 [connection signal="line_reset" from="Game" to="Player" method="line_reset"]
