@@ -6,6 +6,7 @@ signal thinking_finished()
 
 
 var thinking_time : float = 0
+var is_thinking : bool = false
 
 
 func _ready() -> void:
@@ -22,6 +23,7 @@ func _process(delta : float) -> void:
 
 func start_thinking(time : float) -> void:
 	thinking_time = time
+	is_thinking = true
 	$AnimationPlayer.get_animation("Thinking").loop = true
 	$AnimationPlayer.play("Thinking")
 
@@ -33,10 +35,13 @@ func initiate_reset() -> void:
 func stop_reset() -> void:
 	if $AnimationPlayer.current_animation == "Reset":
 		$AnimationPlayer.stop(true)
+	if is_thinking:
+		$AnimationPlayer.play("Thinking")
 
 
 func animation_finished(anim_name : String):
 	if anim_name == "Thinking":
+		is_thinking = false
 		emit_signal("thinking_finished")
 	
 	elif anim_name == "Reset":
