@@ -85,7 +85,7 @@ radius = 1350.27
 
 [sub_resource type="Animation" id=9]
 resource_name = "Reset"
-length = 1.5
+length = 1.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Star0:animation")
 tracks/0/interp = 1
@@ -121,6 +121,20 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ "Off", "On" ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "reset_finished"
+} ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -1198,17 +1212,17 @@ anims/Thinking = SubResource( 10 )
 [node name="Star0" type="AnimatedSprite" parent="Stars"]
 position = Vector2( -13.5, -324 )
 frames = SubResource( 6 )
-animation = "On"
+animation = "Off"
 
 [node name="Star1" type="AnimatedSprite" parent="Stars"]
 position = Vector2( -13.5, 0 )
 frames = SubResource( 7 )
-animation = "On"
+animation = "Off"
 
 [node name="Star2" type="AnimatedSprite" parent="Stars"]
 position = Vector2( 0, 324 )
 frames = SubResource( 8 )
-animation = "On"
+animation = "Off"
 [connection signal="line_reset" from="Game" to="Player" method="line_reset"]
 [connection signal="player_turn" from="Game" to="Player" method="player_turn"]
 [connection signal="line_reset" from="Game/Line0" to="Game" method="line_reset"]
