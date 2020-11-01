@@ -14,3 +14,7 @@ func _input(event : InputEvent) -> void:
 			OS.window_fullscreen = false
 		else:
 			OS.window_fullscreen = true
+
+
+func reset_game() -> void:
+	pass

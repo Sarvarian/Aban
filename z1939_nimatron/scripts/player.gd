@@ -17,6 +17,7 @@ func submit() -> void:
 	if my_turn and do_move:
 		emit_signal("submit")
 		my_turn = false
+		emit_signal("go_red")
 #
 
 func line_pressed(line_index : int) -> void:

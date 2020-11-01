@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://z1939_nimatron/assets/art/light_red/light_red.tres" type="Texture" id=1]
 [ext_resource path="res://z1939_nimatron/assets/art/light_yellow/light_yellow_0.tres" type="Texture" id=2]
@@ -57,6 +57,7 @@
 [ext_resource path="res://z1939_nimatron/assets/art/stars/star_off_2.tres" type="Texture" id=55]
 [ext_resource path="res://z1939_nimatron/assets/art/stars/star_on_2.tres" type="Texture" id=56]
 [ext_resource path="res://z1939_nimatron/scripts/stars.gd" type="Script" id=57]
+[ext_resource path="res://z1939_nimatron/scripts/ai.gd" type="Script" id=58]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -125,7 +126,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id=10]
 resource_name = "Thinking"
-length = 1.2
+length = 0.9
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Star0:animation")
@@ -912,6 +913,7 @@ texture = ExtResource( 1 )
 script = ExtResource( 5 )
 
 [node name="Line1" type="Node2D" parent="Game"]
+scale = Vector2( -1, 1 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true,
@@ -1016,6 +1018,7 @@ texture = ExtResource( 22 )
 script = ExtResource( 5 )
 
 [node name="Line3" type="Node2D" parent="Game"]
+scale = Vector2( -1, 1 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true,
@@ -1180,9 +1183,14 @@ __meta__ = {
 shape = SubResource( 5 )
 
 [node name="AI" type="Node2D" parent="."]
+script = ExtResource( 58 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="ExtinguisherTimer" type="Timer" parent="AI"]
+wait_time = 0.7
+one_shot = true
 
 [node name="Stars" type="Node2D" parent="."]
 position = Vector2( 3996, 2160 )
@@ -1203,12 +1211,13 @@ animation = "Off"
 [node name="Star1" type="AnimatedSprite" parent="Stars"]
 position = Vector2( -13.5, 0 )
 frames = SubResource( 7 )
-animation = "On"
+animation = "Off"
 
 [node name="Star2" type="AnimatedSprite" parent="Stars"]
 position = Vector2( 0, 324 )
 frames = SubResource( 8 )
-animation = "On"
+animation = "Off"
+[connection signal="cpu_turn" from="Game" to="AI" method="cpu_turn"]
 [connection signal="line_reset" from="Game" to="Player" method="line_reset"]
 [connection signal="player_turn" from="Game" to="Player" method="player_turn"]
 [connection signal="line_reset" from="Game/Line0" to="Game" method="line_reset"]
@@ -1224,4 +1233,10 @@ animation = "On"
 [connection signal="pressed" from="Player/SubmitButton/SubmitButton" to="Player" method="submit"]
 [connection signal="released" from="Player/SubmitButton/SubmitButton" to="Player/SubmitButton" method="released"]
 [connection signal="line_pressed" from="Player/Buttons" to="Player" method="line_pressed"]
+[connection signal="start_thinking" from="AI" to="Stars" method="start_thinking"]
+[connection signal="submit" from="AI" to="Game" method="submit"]
+[connection signal="turn_off" from="AI" to="Game" method="turn_off"]
+[connection signal="timeout" from="AI/ExtinguisherTimer" to="AI" method="_on_ExtinguisherTimer_timeout"]
+[connection signal="reset_game" from="Stars" to="." method="reset_game"]
+[connection signal="thinking_finished" from="Stars" to="AI" method="thinking_finished"]
 [connection signal="animation_finished" from="Stars/AnimationPlayer" to="Stars" method="animation_finished"]

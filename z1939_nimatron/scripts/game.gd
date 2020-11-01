@@ -7,6 +7,7 @@ signal line_reset()
 
 
 var is_player_turn : bool = true
+var last_line_that_get_off : Node2D = null
 
 
 func _ready() -> void:
@@ -24,14 +25,16 @@ func get_heaps() -> PoolByteArray:
 
 func turn_off(line_index : int) -> void:
 	get_child(line_index).turn_off()
+	last_line_that_get_off = get_child(line_index)
 
 
 func submit() -> void:
+	last_line_that_get_off.submit()
 	if is_player_turn:
-		emit_signal("player_turn")
 		is_player_turn = false
-	else:
 		emit_signal("cpu_turn", get_heaps())
+	else:
+		emit_signal("player_turn")
 		is_player_turn = true
 
 

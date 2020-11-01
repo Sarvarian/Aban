@@ -35,6 +35,10 @@ _global_script_class_icons={
 config/name="Aban"
 run/main_scene="res://z1939_nimatron/main.tscn"
 
+[autoload]
+
+RNG="*res://aban/singletons/rand_num_gen.gd"
+
 [display]
 
 window/size/width=4320

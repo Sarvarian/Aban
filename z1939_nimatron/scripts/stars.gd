@@ -9,10 +9,6 @@ var thinking_time : float = 0
 var is_thinking : bool = false
 
 
-func _ready() -> void:
-	$AnimationPlayer.play("Thinking")
-
-
 func _process(delta : float) -> void:
 	if not $AnimationPlayer.current_animation == "Thinking":
 		return
@@ -22,6 +18,7 @@ func _process(delta : float) -> void:
 
 
 func start_thinking(time : float) -> void:
+	print(time)
 	thinking_time = time
 	is_thinking = true
 	$AnimationPlayer.get_animation("Thinking").loop = true

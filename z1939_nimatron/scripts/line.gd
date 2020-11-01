@@ -25,9 +25,10 @@ func reset() -> void:
 func on_count() -> int:
 	var counter : int = 0
 	for light_bulb in get_children():
-		if light_bulb.is_on():
+		if light_bulb.is_on:
 			counter += 1
 	return counter
 
 
-
+func submit() -> void:
+	offes.clear()

@@ -5,13 +5,13 @@ var is_on : bool = true setget ,get_is_on
 
 
 func on() -> void:
-	modulate.v = 1
+	modulate.a = 1
 	is_on = true
 	pass
 
 
 func off() -> void:
-	modulate.v = .5
+	modulate.a = .2
 	is_on = false
 	pass
 
