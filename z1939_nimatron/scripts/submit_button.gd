@@ -1,12 +1,12 @@
-extends Node2D
+extends AnimatedSprite
 
 
 func go_red() -> void:
-	$AnimationPlayer.play("Red")
+	play("Red")
 #
 
 func go_green() -> void:
-	$AnimationPlayer.play("Green")
+	play("Green")
 #
 
 func pressed() -> void:
