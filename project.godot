@@ -37,7 +37,7 @@ run/main_scene="res://z1939_nimatron/main.tscn"
 
 [autoload]
 
-RNG="*res://aban/singletons/rand_num_gen.gd"
+RNG="*res://aban/singletons/r_n_g.gd"
 
 [display]
 

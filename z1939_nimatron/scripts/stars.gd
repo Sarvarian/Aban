@@ -18,7 +18,6 @@ func _process(delta : float) -> void:
 
 
 func start_thinking(time : float) -> void:
-	print(time)
 	thinking_time = time
 	is_thinking = true
 	$AnimationPlayer.get_animation("Thinking").loop = true

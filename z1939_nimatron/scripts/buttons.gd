@@ -37,4 +37,10 @@ func _input(event : InputEvent) -> void:
 				emit_signal("line_pressed", i)
 				return
 
-				
+
+func check_area_for_mouse() -> void:
+	pass
+
+
+
+
