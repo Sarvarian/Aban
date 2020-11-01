@@ -2,11 +2,14 @@ extends Node2D
 
 
 func _ready() -> void:
-	pass
+	InputMap.add_action("full_screen")
+	var event : InputEventKey = InputEventKey.new()
+	event.scancode = KEY_F11
+	InputMap.action_add_event("full_screen", event)
 
 
-func _input(_event : InputEvent) -> void:
-	if Input.is_key_pressed(KEY_F11):
+func _input(event : InputEvent) -> void:
+	if event.is_action_pressed("full_screen"):
 		if OS.window_fullscreen:
 			OS.window_fullscreen = false
 		else:
