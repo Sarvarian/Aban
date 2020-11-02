@@ -6,7 +6,7 @@ func _ready() -> void:
 	var event : InputEventKey = InputEventKey.new()
 	event.scancode = KEY_F11
 	InputMap.action_add_event("full_screen", event)
-	get_tree().get_root().set_transparent_background(true)
+#	get_tree().get_root().set_transparent_background(true)
 
 
 func _input(event : InputEvent) -> void:
