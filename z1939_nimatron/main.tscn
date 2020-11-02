@@ -875,7 +875,6 @@ hue_variation = 0.35
 hue_variation_random = 1.0
 
 [node name="positioning" type="Sprite" parent="."]
-visible = false
 modulate = Color( 1, 1, 1, 0.313726 )
 texture = ExtResource( 49 )
 centered = false
