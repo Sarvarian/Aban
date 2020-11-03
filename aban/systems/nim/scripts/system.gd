@@ -14,6 +14,7 @@ func process(_ud) -> void:
 		
 # warning-ignore:return_value_discarded
 		semaphore.wait()
+		print("from nimsys ", datas.size())
 		
 		mutex_datas.lock()
 		for d in datas:

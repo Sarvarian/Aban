@@ -18,6 +18,7 @@ func _process(_delta : float) -> void:
 	for o in outputs_use:
 		if o[0].is_valid():
 			call_deferred("function_call", o)
+		outputs_use.erase(o)
 
 
 func function_call(output : Array):
