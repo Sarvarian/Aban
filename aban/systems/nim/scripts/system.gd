@@ -7,6 +7,7 @@ var mutex_active : Mutex = Mutex.new()
 var active : bool = true
 # [[heaps, misere, output], ...]
 var datas : Array = []
+var _datas_use : Array = []
 
 
 func process(_ud) -> void:
@@ -14,23 +15,20 @@ func process(_ud) -> void:
 		
 # warning-ignore:return_value_discarded
 		semaphore.wait()
-		print("from nimsys ", datas.size())
 		
 		mutex_datas.lock()
 		for d in datas:
+			_datas_use.append(d)
+			datas.erase(d)
 			mutex_datas.unlock()
-			
-#			d[2].call_func(Nim.play(d[0], d[1]))
-			
+		mutex_datas.unlock()
+		
+		for d in _datas_use:
 			OutputSystem.call_with_process(
 				d[2],
 				[Nim.play(d[0], d[1])]
 				)
-			
-			mutex_datas.lock()
-			datas.erase(d)
-			mutex_datas.unlock()
-		mutex_datas.unlock()
+			_datas_use.erase(d)
 		
 		
 		mutex_active.lock()

@@ -16,6 +16,5 @@ func play(
 	$System.mutex_datas.lock()
 	$System.datas.append(data)
 	$System.mutex_datas.unlock()
-	$System.semaphore.post()
 	
 	pass
