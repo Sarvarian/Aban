@@ -11,8 +11,7 @@ func _ready() -> void:
 			print("NimSystem thread start failed!")
 
 
-func _process(_delta : float) -> void:
-	system.semaphore.post()
+func _physics_process(_delta : float) -> void:
 	pass
 
 
@@ -23,3 +22,7 @@ func _exit_tree() -> void:
 		system.mutex_active.unlock()
 		system.semaphore.post()
 		thread.wait_to_finish()
+
+
+func _on_Timer_timeout():
+	pass

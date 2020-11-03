@@ -20,6 +20,5 @@ func _process(_delta : float) -> void:
 			call_deferred("function_call", o)
 		outputs_use.erase(o)
 
-
 func function_call(output : Array):
 	output[0].call_funcv(output[1])

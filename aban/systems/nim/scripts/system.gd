@@ -7,28 +7,29 @@ var mutex_active : Mutex = Mutex.new()
 var active : bool = true
 # [[heaps, misere, output], ...]
 var datas : Array = []
-var _datas_use : Array = []
 
 
 func process(_ud) -> void:
+	var data : Array = []
 	while true:
+#		yield(get_tree().create_timer(.5), "timeout")
 		
-# warning-ignore:return_value_discarded
-		semaphore.wait()
+		
 		
 		mutex_datas.lock()
-		for d in datas:
-			_datas_use.append(d)
-			datas.erase(d)
+		if datas:
+			data = datas[0]
+			datas.erase(data)
 			mutex_datas.unlock()
-		mutex_datas.unlock()
+		else:
+			mutex_datas.unlock()
+			continue
 		
-		for d in _datas_use:
+		if data:
 			OutputSystem.call_with_process(
-				d[2],
-				[Nim.play(d[0], d[1])]
+				data[2],
+				[Nim.play(data[0], data[1])]
 				)
-			_datas_use.erase(d)
 		
 		
 		mutex_active.lock()
