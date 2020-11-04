@@ -903,9 +903,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Line0" type="Node2D" parent="Game" groups=[
-"lines",
-]]
+[node name="Line0" type="Node2D" parent="Game"]
 script = ExtResource( 41 )
 __meta__ = {
 "_edit_group_": true,
@@ -916,9 +914,7 @@ __meta__ = {
 texture = ExtResource( 1 )
 script = ExtResource( 5 )
 
-[node name="Line1" type="Node2D" parent="Game" groups=[
-"lines",
-]]
+[node name="Line1" type="Node2D" parent="Game"]
 scale = Vector2( -1, 1 )
 script = ExtResource( 41 )
 __meta__ = {
@@ -956,9 +952,7 @@ position = Vector2( -342, -162 )
 texture = ExtResource( 7 )
 script = ExtResource( 5 )
 
-[node name="Line2" type="Node2D" parent="Game" groups=[
-"lines",
-]]
+[node name="Line2" type="Node2D" parent="Game"]
 script = ExtResource( 41 )
 __meta__ = {
 "_edit_group_": true,
@@ -1025,9 +1019,7 @@ position = Vector2( -405, -648 )
 texture = ExtResource( 22 )
 script = ExtResource( 5 )
 
-[node name="Line3" type="Node2D" parent="Game" groups=[
-"lines",
-]]
+[node name="Line3" type="Node2D" parent="Game"]
 scale = Vector2( -1, 1 )
 script = ExtResource( 41 )
 __meta__ = {
