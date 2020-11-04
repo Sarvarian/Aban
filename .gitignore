@@ -10,3 +10,6 @@ data_*/
 
 # Exports
 export/
+
+# Propriotry Font
+tests/IRANSans.ttf
