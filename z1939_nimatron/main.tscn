@@ -1250,7 +1250,7 @@ normal = ExtResource( 45 )
 [connection signal="line_reset" from="Game" to="Player" method="line_reset"]
 [connection signal="player_turn" from="Game" to="Player" method="player_turn"]
 [connection signal="line_reset" from="Game/Line0" to="Game" method="line_reset"]
-[connection signal="line_reset" from="Game/Line1" to="." method="line_reset"]
+[connection signal="line_reset" from="Game/Line1" to="Game" method="line_reset"]
 [connection signal="line_reset" from="Game/Line2" to="Game" method="line_reset"]
 [connection signal="line_reset" from="Game/Line3" to="Game" method="line_reset"]
 [connection signal="go_green" from="Player" to="Submit" method="go_green"]

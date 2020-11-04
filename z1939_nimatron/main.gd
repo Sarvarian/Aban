@@ -20,7 +20,3 @@ func _input(event : InputEvent) -> void:
 
 func reset_game() -> void:
 	pass
-
-
-func line_reset():
-	pass # Replace with function body.
