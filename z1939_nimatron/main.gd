@@ -1,6 +1,7 @@
 extends Node2D
 
 
+
 func _ready() -> void:
 	InputMap.add_action("full_screen")
 	var event : InputEventKey = InputEventKey.new()
@@ -19,3 +20,7 @@ func _input(event : InputEvent) -> void:
 
 func reset_game() -> void:
 	pass
+
+
+func line_reset():
+	pass # Replace with function body.

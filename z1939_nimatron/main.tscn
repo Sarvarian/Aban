@@ -1,9 +1,9 @@
-[gd_scene load_steps=70 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://z1939_nimatron/assets/art/light_red/light_red.tres" type="Texture" id=1]
 [ext_resource path="res://z1939_nimatron/assets/art/light_yellow/light_yellow_0.tres" type="Texture" id=2]
 [ext_resource path="res://z1939_nimatron/assets/art/light_yellow/light_yellow_1.tres" type="Texture" id=3]
-[ext_resource path="res://z1939_nimatron/scripts/game_master.gd" type="Script" id=4]
+[ext_resource path="res://z1939_nimatron/scripts/game.gd" type="Script" id=4]
 [ext_resource path="res://z1939_nimatron/scripts/light_bulb.gd" type="Script" id=5]
 [ext_resource path="res://z1939_nimatron/assets/art/light_yellow/light_yellow_2.tres" type="Texture" id=6]
 [ext_resource path="res://z1939_nimatron/assets/art/light_yellow/light_yellow_5.tres" type="Texture" id=7]
@@ -40,6 +40,7 @@
 [ext_resource path="res://z1939_nimatron/assets/art/light_blue/light_blue_15.tres" type="Texture" id=38]
 [ext_resource path="res://z1939_nimatron/assets/art/light_blue/light_blue_16.tres" type="Texture" id=39]
 [ext_resource path="res://z1939_nimatron/assets/art/light_blue/light_blue_17.tres" type="Texture" id=40]
+[ext_resource path="res://z1939_nimatron/scripts/line.gd" type="Script" id=41]
 [ext_resource path="res://z1939_nimatron/main.gd" type="Script" id=42]
 [ext_resource path="res://z1939_nimatron/assets/Oglsdl-Dr8v2.wav" type="AudioStream" id=43]
 [ext_resource path="res://z1939_nimatron/assets/art/white_flower.tres" type="Texture" id=44]
@@ -153,40 +154,40 @@ tracks/2/keys = {
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ ExtResource( 52 ) ],
-"loop": false,
-"name": "On",
-"speed": 0.0
-}, {
 "frames": [ ExtResource( 51 ) ],
 "loop": false,
 "name": "Off",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 52 ) ],
+"loop": false,
+"name": "On",
 "speed": 0.0
 } ]
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ ExtResource( 54 ) ],
-"loop": false,
-"name": "On",
-"speed": 0.0
-}, {
 "frames": [ ExtResource( 53 ) ],
 "loop": false,
 "name": "Off",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 54 ) ],
+"loop": false,
+"name": "On",
 "speed": 0.0
 } ]
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ ExtResource( 56 ) ],
-"loop": false,
-"name": "On",
-"speed": 0.0
-}, {
 "frames": [ ExtResource( 55 ) ],
 "loop": false,
 "name": "Off",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 56 ) ],
+"loop": false,
+"name": "On",
 "speed": 0.0
 } ]
 
@@ -205,9 +206,6 @@ animations = [ {
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 42 )
-
-[node name="GameMaster" type="Node" parent="."]
-script = ExtResource( 4 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 43 )
@@ -899,6 +897,7 @@ __meta__ = {
 [node name="Game" type="Node2D" parent="."]
 position = Vector2( 2160, 2169 )
 rotation = 4.46638e-06
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -907,6 +906,7 @@ __meta__ = {
 [node name="Line0" type="Node2D" parent="Game" groups=[
 "lines",
 ]]
+script = ExtResource( 41 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -920,6 +920,7 @@ script = ExtResource( 5 )
 "lines",
 ]]
 scale = Vector2( -1, 1 )
+script = ExtResource( 41 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -958,6 +959,7 @@ script = ExtResource( 5 )
 [node name="Line2" type="Node2D" parent="Game" groups=[
 "lines",
 ]]
+script = ExtResource( 41 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -1027,6 +1029,7 @@ script = ExtResource( 5 )
 "lines",
 ]]
 scale = Vector2( -1, 1 )
+script = ExtResource( 41 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -1243,6 +1246,13 @@ modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -479.679, -185.186 )
 scale = Vector2( 0.849168, 0.776203 )
 normal = ExtResource( 45 )
+[connection signal="cpu_turn" from="Game" to="AI" method="cpu_turn"]
+[connection signal="line_reset" from="Game" to="Player" method="line_reset"]
+[connection signal="player_turn" from="Game" to="Player" method="player_turn"]
+[connection signal="line_reset" from="Game/Line0" to="Game" method="line_reset"]
+[connection signal="line_reset" from="Game/Line1" to="." method="line_reset"]
+[connection signal="line_reset" from="Game/Line2" to="Game" method="line_reset"]
+[connection signal="line_reset" from="Game/Line3" to="Game" method="line_reset"]
 [connection signal="go_green" from="Player" to="Submit" method="go_green"]
 [connection signal="go_red" from="Player" to="Submit" method="go_red"]
 [connection signal="reset" from="Player" to="Game" method="reset"]

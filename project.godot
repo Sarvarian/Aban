@@ -27,14 +27,11 @@ _global_script_class_icons={
 [application]
 
 config/name="Aban"
-run/main_scene="res://tests/test.tscn"
+run/main_scene="res://z1939_nimatron/main.tscn"
 
 [autoload]
 
 RNG="*res://aban/globals/r_n_g.gd"
-MainTheardSystem="*res://aban/systems/0_main_theard/main_thread_system.tscn"
-OutputSystem="*res://aban/systems/1_output/output_system.tscn"
-NimSystem="*res://aban/systems/nim/nim_system.tscn"
 
 [display]
 
