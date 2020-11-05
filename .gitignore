@@ -13,3 +13,6 @@ export/
 
 # Propriotry Font
 tests/IRANSans.ttf
+
+# Android
+android/
