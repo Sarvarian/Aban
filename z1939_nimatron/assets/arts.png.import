@@ -2,25 +2,23 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/arts.png-f1255397356079c89445ec469835e8d4.s3tc.stex"
-path.etc="res://.import/arts.png-f1255397356079c89445ec469835e8d4.etc.stex"
+path="res://.import/arts.png-f1255397356079c89445ec469835e8d4.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://z1939_nimatron/assets/arts.png"
-dest_files=[ "res://.import/arts.png-f1255397356079c89445ec469835e8d4.s3tc.stex", "res://.import/arts.png-f1255397356079c89445ec469835e8d4.etc.stex" ]
+dest_files=[ "res://.import/arts.png-f1255397356079c89445ec469835e8d4.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
-compress/normal_map=2
+compress/normal_map=0
 flags/repeat=0
 flags/filter=true
 flags/mipmaps=true
