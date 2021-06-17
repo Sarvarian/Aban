@@ -152,53 +152,53 @@ tracks/2/keys = {
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ ExtResource( 51 ) ],
-"loop": false,
-"name": "Off",
-"speed": 0.0
-}, {
 "frames": [ ExtResource( 52 ) ],
 "loop": false,
 "name": "On",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 51 ) ],
+"loop": false,
+"name": "Off",
 "speed": 0.0
 } ]
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ ExtResource( 53 ) ],
-"loop": false,
-"name": "Off",
-"speed": 0.0
-}, {
 "frames": [ ExtResource( 54 ) ],
 "loop": false,
 "name": "On",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 53 ) ],
+"loop": false,
+"name": "Off",
 "speed": 0.0
 } ]
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ ExtResource( 55 ) ],
-"loop": false,
-"name": "Off",
-"speed": 0.0
-}, {
 "frames": [ ExtResource( 56 ) ],
 "loop": false,
 "name": "On",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 55 ) ],
+"loop": false,
+"name": "Off",
 "speed": 0.0
 } ]
 
 [sub_resource type="SpriteFrames" id=10]
 animations = [ {
-"frames": [ ExtResource( 46 ) ],
-"loop": false,
-"name": "Red",
-"speed": 0.0
-}, {
 "frames": [ ExtResource( 45 ) ],
 "loop": false,
 "name": "Green",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 46 ) ],
+"loop": false,
+"name": "Red",
 "speed": 0.0
 } ]
 
@@ -1216,6 +1216,7 @@ modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -479.679, -185.186 )
 scale = Vector2( 0.849168, 0.776203 )
 normal = ExtResource( 45 )
+
 [connection signal="cpu_turn" from="Game" to="AI" method="cpu_turn"]
 [connection signal="line_reset" from="Game" to="Player" method="line_reset"]
 [connection signal="player_turn" from="Game" to="Player" method="player_turn"]
